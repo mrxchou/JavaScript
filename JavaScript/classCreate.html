@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Person{
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        show() {
+            console.log(this.name + "...." + this.age);
+        }
+
+        eat() {
+            console.log("吃饭....");
+        }
+    }
+
+    let p = new Person("张三",23);
+    console.log(p.name + p.age);
+    p.show();
+    p.eat();
+</script>
+</html>

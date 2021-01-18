@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let person = {
+        name: "张三",
+        age:23,
+        hobby: ["篮球", "羽毛球", "足球"],
+        
+        show:function () {
+            console.log(this.name + "..." + this.age);
+        },
+        eat:function () {
+            console.log("吃饭。。。。");
+        }
+    }
+    person.show();
+    person.eat();
+    for(let i = 0;i<person.hobby.length;i++){
+        console.log(person.hobby[i]);
+    }
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <img id="img" src="img/01.png" alt="美女"><br>
+        <button id= "up" onclick="up()">上一张</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button id="down" onclick="down()">下一张</button>
+    </div>
+</body>
+<script>
+    imgArr=[
+        "img/01.png",
+        "img/02.png",
+        "img/03.png",
+        "img/04.png",
+        "img/05.png",
+        "img/06.png",
+        "img/07.png",
+        "img/08.png",
+        "img/09.png",
+        "img/10.png",
+        "img/11.png",
+        "img/12.png",
+        "img/13.png"
+    ]
+
+    function up() {
+        let downImg = document.getElementById("img");
+        let attributeImg = downImg.getAttribute("src");
+        let n = imgArr.indexOf(attributeImg);
+        if (n == 0) {
+            downImg.setAttribute("src", imgArr[imgArr.length-1]);
+        } else{
+            downImg.setAttribute("src", imgArr[n-1]);
+        }
+    }
+
+    function down() {
+        let downImg = document.getElementById("img");
+        let attributeImg = downImg.getAttribute("src");
+        let n = imgArr.indexOf(attributeImg);
+        if (n == imgArr.length-1) {
+            downImg.setAttribute("src", imgArr[0]);
+        } else{
+            downImg.setAttribute("src", imgArr[n+1]);
+        }
+    }
+
+</script>
+</html>

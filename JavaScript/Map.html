@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let map = new Map();
+    map.set(1, "张三");
+    map.set(2, "李四");
+    map.set(3, "张三");
+
+    document.write(map.size);
+
+    document.write(map.get(2));
+    let et = map.entries();
+    for(let i=0;i<map.size;i++) {
+        document.write(et.next().value+"<br>");
+    }
+    map.delete(3);
+    for(let i=0;i<map.size;i++) {
+        document.write(et.next().value+"<br>");
+    }
+</script>
+</html>

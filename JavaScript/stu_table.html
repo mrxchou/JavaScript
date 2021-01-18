@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #tb{
+        border: 1px;
+        width: 400px;
+        text-align: center;
+    }
+    td,th{
+        width: 100px;
+    }
+</style>
+<body>
+<div align="center">
+    姓名：<input id="name" type="text" name="username" placeholder="请输入姓名" autocapitalize="off"/>
+    年龄：<input id="ageId" type="number" name="age" placeholder="请输入年龄" autocapitalize="off"/>
+    性别：<input id="genderId" type="text" name="gender"  placeholder="请输入性别" autocapitalize="off"/>
+    <input type="button" value="添加" onclick="add()">
+</div>
+<br>
+    <table id="tb" border="1px" align="center">
+        <caption>学生信息表</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>24</td>
+            <td>女</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>23</td>
+            <td>男</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">删除</a></td>
+        </tr>
+    </table>
+</body>
+<script>
+    function add() {
+        //创建一行
+        let newTr = document.createElement("tr");
+        //创建4个td
+        let nameTd = document.createElement("td");
+        let ageTd = document.createElement("td");
+        let genderTd = document.createElement("td");
+        let delTd = document.createElement("td");
+        let aNode = document.createElement("a");
+
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("ageId").value;
+        let gender = document.getElementById("genderId").value;
+        //赋值
+        nameTd.innerHTML = name;
+        ageTd.innerHTML = age;
+        genderTd.innerHTML = gender;
+        aNode.innerHTML = "删除";
+        aNode.setAttribute("href", "JavaScript:void(0);");//JavaScript:void(0);
+        aNode.setAttribute("onclick", "drop(this)");//JavaScript:void(0);
+        console.log(name);
+        console.log(age);
+        console.log(gender);
+        //添加为子节点
+        newTr.appendChild(nameTd);
+        newTr.appendChild(ageTd);
+        newTr.appendChild(genderTd);
+        newTr.appendChild(delTd);
+        delTd.appendChild(aNode);
+        //添加在table后
+        document.getElementById("tb").appendChild(newTr);
+    }
+
+    function drop(obj) {
+        let parentNode = obj.parentNode.parentNode.parentNode;
+        let tbNode = document.getElementById("tb");
+        console.log(tbNode);
+        let node = obj.parentNode.parentNode;
+        parentNode.removeChild(node);
+    }
+</script>
+</html>

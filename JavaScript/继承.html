@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class Person{
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        eat() {
+            console.log("吃饭。。。。");
+        }
+    }
+
+    class Worker extends Person {
+        constructor(name, age, salary) {
+            super(name, age);
+            this.salary = salary;
+        }
+
+        show() {
+            console.log(this.name + " " + this.age + " " + this.salary + " ");
+        }
+    }
+    let w = new Worker("张三", 23, 30000);
+    w.show();
+    w.eat();
+</script>
+</html>

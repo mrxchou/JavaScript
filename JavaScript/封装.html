@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装</title>
+</head>
+<script src="js/my_01.js"></script>
+<body>
+    <div id="div1">div1</div>
+    <div name="div2">div2</div>
+</body>
+<script>
+    // let div1 = document.getElementById("div1");
+    // alert(div1);
+    // let divs = document.getElementsByName("div2");
+    // alert(divs.length);
+    // let divs2 = document.getElementsByTagName("div");
+    // alert(divs2.length);
+
+    let div1 = getById("div1");
+    alert(div1);
+    let divs = getByName("div2");
+    alert(divs.length);
+
+</script>
+</html>

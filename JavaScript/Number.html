@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    // parseFloat() :将传入的字符串浮点数转换为浮点数
+    document.write(Number.parseFloat("3.14") + "<br>"); //3.14
+    // parseInt():将传入的字符串整数转换为整数
+    document.write(Number.parseInt("100") + "<br>"); //100
+    document.write(Number.parseInt("200abc") + "<br>"); //200,从数字开始转换，一直到不是数字为止
+
+    // isNaN():判断传入的值是否为NaN
+    document.write(NaN == NaN); //false
+    document.write("<br>");
+    document.write(isNaN(NaN));
+
+</script>
+</html>

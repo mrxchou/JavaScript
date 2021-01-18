@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window窗口对象</title>
+</head>
+<body>
+    <div id="div">
+        ddddd
+    </div>
+</body>
+<script>
+    //定时器
+    function fun() {
+        alert("该起床了。。");
+    }
+    //设置一次性的定时器
+    let d1 = setTimeout("fun()", 3000);
+    //如何取消一次性定时器
+    clearTimeout(d1);
+    //循环的定时器
+    let d2 = setInterval("fun()", 3000);
+    //取消循环的定时器
+    clearInterval(d2);
+    //加载事件
+    let div = document.getElementById("div");
+    alert(div);
+</script>
+</html>

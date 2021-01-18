@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSon</title>
+</head>
+<body>
+
+</body>
+<script>
+    //stringify
+    //定义天气对象
+    let weather={
+        city: "北京",
+        date: "2020-02-02",
+        temperature:"10°～20°",
+        shidu: "22%"
+    };
+    let str = JSON.stringify(weather);
+    console.log(str);
+    let weather2 = JSON.parse(str);
+    weather2.city
+</script>
+</html>

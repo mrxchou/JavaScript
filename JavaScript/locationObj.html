@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocationObj</title>
+</head>
+<body>
+<p>
+    注册成功!<span id="time">5</span>秒后自动跳转到首页
+</p>
+</body>
+<script>
+    let num = 5;
+    function showTime() {
+
+        if (num <= 0) {
+            location.href = "https://www.baidu.com";
+        }
+        if (num > 0) {
+            num--;
+        }
+
+        let span = document.getElementById("time");
+        span.innerText = num;
+    }
+
+    setInterval("showTime()", 1000);
+</script>
+</html>

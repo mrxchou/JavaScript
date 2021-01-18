@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机验证</title>
+</head>
+<style>
+    form {
+        width: 400px;
+        margin: auto;
+    }
+</style>
+<body>
+<form action="#" method="get" onsubmit="subFunc()">
+    用户名：<input type="text" id="username" name="username" placeholder="请输入用户名..." autocomplete="off"><br>
+    密&emsp;码：<input type="text" id="password" name="password" placeholder="请输入密码..." autocomplete="off"><br>
+    <button id="btn">登陆</button>
+</form>
+</body>
+<script>
+    function subFunc() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        // alert(username);
+        let reg1 = /^[a-zA-Z]{6}$/;
+        let result1 = reg1.test(username);
+        let reg2 = /^[a-zA-Z_0-9]{4,16}$/;
+        let result2 = reg2.test(password);
+        if(!result1){
+            alert("用户名格式错误，请输入6位纯字母");
+            return false;
+        }
+        if(!result2){
+            alert("密码格式错误，请输入4-16位字母、数字、下划线");
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>

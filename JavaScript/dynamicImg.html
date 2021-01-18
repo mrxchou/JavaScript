@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dynamic Img</title>
+</head>
+<body>
+    <img src="img/02.png" id="img" style="display: none">
+</body>
+<script>
+    setTimeout(function () {
+        let img = document.getElementById("img");
+        img.style.display = "block";
+    }, 3000);
+    setTimeout(function () {
+        let img = document.getElementById("img");
+        img.style.display = "none";
+    }, 6000);
+
+
+</script>
+</html>
