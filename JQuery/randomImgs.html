@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机图片显示</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+<!-- 小图 -->
+<div style="background-color:red;border: dotted; height: 50px; width: 50px">
+    <img src="img/01.png" id="small" style="width: 50px; height: 50px;">
+</div>
+<!-- 大图 -->
+<div style="border: double ;width: 400px; height: 400px; position: absolute; left: 500px; top:10px">
+    <img src="" id="big" style="width: 400px; height: 400px; display:none;">
+</div>
+
+<!-- 开始和结束按钮 -->
+<input id="startBtn" type="button" style="width: 150px;height: 150px; font-size: 20px" value="开始">
+<input id="stopBtn" type="button" style="width: 150px;height: 150px; font-size: 20px" value="停止">
+</body>
+<script>
+    let imgs=[
+        "img/01.png",
+        "img/02.png",
+        "img/03.png",
+        "img/04.png",
+        "img/05.png",
+        "img/06.png",
+        "img/07.png",
+        "img/08.png",
+        "img/09.png",
+        "img/10.png"
+    ];
+    let index = 0;
+    let time = null;
+    //初始化开始和停止按钮
+    $("#startBtn").attr("disabled", false);
+    $("#stopBtn").attr("disabled", true);
+
+    //开始按钮事件
+    $("#startBtn").click(function () {
+        $("#stopBtn").attr("disabled", false);
+        $(this).attr("disabled", true);
+        $("#big").prop("style", "width: 400px; height: 400px;display:none");
+
+        //循环定时器
+        time = setInterval(function () {
+            if (index == imgs.length - 1) {
+                index = 0;
+            }
+            index++;
+            $("#small").prop("src", imgs[index]);
+        }, 100);
+
+    });
+
+    //停止按钮事件
+    $("#stopBtn").click(function () {
+        //清楚定时器
+        clearInterval(time);
+        $("#startBtn").attr("disabled", false);
+        $("#stopBtn").attr("disabled", true);
+
+        //展示在大图上
+        $("#big").prop("src", imgs[index]);
+        $("#big").show(3000);
+        //  $("#big").slideDown(3000);
+
+    });
+
+</script>
+</html>

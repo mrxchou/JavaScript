@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+<input type="button" id="btn" value="遍历列表项">
+<ul>
+    <li>黑马程序员</li>
+    <li>传智专修学院</li>
+    <li>传智播客</li>
+</ul>
+</body>
+<script>
+    //传统方式
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     for(let i = 0;i<lis.length;i++) {
+    //         // document.write(lis[i].html()+" ");
+    //         document.write(i +":"+ lis[i].innerHTML);
+    //     }
+    // });
+    //对象.each()方法
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     lis.each(function (index, ele) {
+    //         alert(index + ":" + ele.innerHTML);
+    //     })
+    // });
+    //方式三：$.each()方法
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     $.each(lis,function (index, ele) {
+    //         alert(index + ":" + ele.innerHTML);
+    //     })
+    // });
+    //方式四： for  of 语句
+    // for(ele of 容器对象){}
+    $("#btn").click(function () {
+        let lis = $("li");
+       for(ele of lis){
+           console.log(lis);
+       }
+    });
+</script>
+</html>

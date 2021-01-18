@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的绑定和解绑</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+    <button id="btn1" >点我</button>
+    <button id="btn2">解绑</button>
+
+</body>
+<script>
+    //给btn1绑定一个单击的事件
+    $("#btn1").on("click", function () {
+        alert("点我干嘛");
+    });
+    //给btn2解绑btn1的单击事件
+    $("#btn2").on("click",function () {
+        $("#btn1").off("click");
+    })
+</script>
+</html>

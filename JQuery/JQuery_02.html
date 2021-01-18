@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的使用</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+<div id="div"><img id="img1" src="img/02.png" alt="美女"></div>
+<input id="btn" type="button" value="点我"><br>
+<input type="text" id="input">
+</body>
+<script>
+    //单击事件
+    // $("#btn").click(function () {
+    //     alert("点我干嘛？")
+    //
+    // });
+    //获得焦点的事件
+    // $("#input").focus(function () {
+    //     alert("你要输入数据啦");
+    // });
+    //失去焦点的事件
+    $("#input").blur(function () {
+        alert("你输入完成了");
+    });
+    //
+    // $("#btn").click(function () {
+    //     $("#img1").css("display", "none");
+    // });
+    $("#btn").click(function () {
+        $("#cls").toggleClass();
+
+    });
+
+</script>
+</html>

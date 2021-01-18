@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器选择器</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div class="cls1">div3</div>
+</body>
+<script>
+    let div1 = $("div:first");  //jQuery对象
+    console.log(div1.html());
+    // let div2 = $("div")[0];  //Js对象
+    // console.log(div2.innerHTML);
+    let lastDiv = $("div:last");
+    console.log(lastDiv.html());
+    let notDiv = $("div:not(#div2)");
+    console.log(notDiv.length);
+    let evenDivs = $("div:even");
+    console.log(evenDivs.length);
+    let oddDivs = $("div:odd");
+    console.log(oddDivs.length);
+    let eqDivs = $("div:eq(1)");
+    console.log(eqDivs.length);
+    let gtDivs = $("div:gt(2)");
+    console.log(gtDivs.length);
+    let ltDivs = $("div:lt(2)");
+    console.log(ltDivs.length);
+
+
+</script>
+</html>

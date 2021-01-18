@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+</head>
+<script src="js/jquery-3.3.1.min.js"></script>
+<body>
+    <table  id="tab" border="1" width="800" align="center">
+        <tr>
+            <th>
+                <button id="all">全选</button>
+                <button id="notAll">取消全选</button>
+                <button id="reserve">反选</button>
+            </th>
+            <th>分类ID</th>
+            <th>分类名称</th>
+            <th>分类描述</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>1</td>
+            <td>手机数码</td>
+            <td>手机数码类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr> <td><input type="checkbox" class="item"></td>
+            <td>2</td>
+            <td>电脑办公</td>
+            <td>电脑办公类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>3</td>
+            <td>鞋靴箱包</td>
+            <td>鞋靴箱包类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>4</td>
+            <td>家居饰品</td>
+            <td>家居饰品类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+    </table>
+</body>
+<script>
+    //全选
+    $("#all").click(function () {
+        $(".item").each(function () {
+            $(this).prop("checked", true);
+        });
+    })
+    //非全选
+    $("#notAll").click(function () {
+        var items = $(".item");
+        items.each(function () {
+            $(this).prop("checked", false);
+        });
+
+    });
+    //反选
+    $("#reserve").click(function () {
+        $(".item").each(function () {
+            $(this).prop("checked", !$(this).prop("checked"));
+        })
+    });
+</script>
+</html>
